@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { WeatherData } from '../models/weather.model';
+import { NgForm }   from '@angular/forms';
 
 @Component({
   selector: 'app-weather-layout',
@@ -18,7 +19,7 @@ export class WeatherLayoutComponent implements OnInit {
   ngOnInit(): void {
     this.getWeatherData(this.city);
   }
-  onSubmit() {
+  onSubmit(form: NgForm) {
     this.getWeatherData(this.city);
     this.city='';
     this.hasError = false;

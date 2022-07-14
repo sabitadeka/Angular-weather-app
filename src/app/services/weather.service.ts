@@ -19,6 +19,7 @@ export class WeatherService {
     }
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
+
   getWeatherData(city: string):Observable<WeatherData> {
     return this.http.get<WeatherData>(environment.weatherApiUrl, {
       headers: new HttpHeaders()
